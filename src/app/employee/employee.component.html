@@ -1,0 +1,30 @@
+
+<div class="container p-3 my-3 bg-white text-grey">
+
+  <form>
+  <div class="form-group form-inline">
+      search: <input class="form-control ml-2" type="text" />
+  </div>
+</form>
+<table class="table table-striped">
+    <thead style="text-align: center;">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">department</th>
+        <th scope="col">joining_date</th>
+        <th scope="col">salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let data of data" >
+        <td>{{ data.id }}</td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.department }}</td>
+        <td>{{ data.joining_date | date}}</td>
+        <td>{{ data.salary }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<router-outlet></router-outlet>
