@@ -3,3 +3,11 @@ div{
 
     text-align: center;
 }
+h1{
+    transition-duration: 0.4s;
+  }
+  
+h1:hover {
+    background-color: lightseagreen; 
+    color: white;
+  }

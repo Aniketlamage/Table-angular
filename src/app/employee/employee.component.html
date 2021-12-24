@@ -1,30 +1,30 @@
 
-<div class="container p-3 my-3 bg-white text-grey">
-
-  <form>
-  <div class="form-group form-inline">
-      search: <input class="form-control ml-2" type="text" />
+<div class="container ">
+  <h1>Dashboard</h1>
+  <div class="form-group row">
+     <input class="form-control" type="text" name="search" [(ngModel)]="searchText" placeholder="search by id or name"/>
   </div>
-</form>
+
+
 <table class="table table-striped">
-    <thead style="text-align: center;">
+    <thead>
       <tr>
-        <th scope="col">id</th>
-        <th scope="col">name</th>
-        <th scope="col">department</th>
-        <th scope="col">joining_date</th>
-        <th scope="col">salary</th>
+        <th >id</th>
+        <th >name</th>
+        <th >department</th>
+        <th >joining_date</th>
+        <th >salary</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor = "let data of data" >
+      <tr *ngFor = "let data of data | filter:searchText" >
         <td>{{ data.id }}</td>
         <td>{{ data.name }}</td>
         <td>{{ data.department }}</td>
-        <td>{{ data.joining_date | date}}</td>
+        <td>{{ data.joining_date | date:"MM/dd/yy" }}</td>
         <td>{{ data.salary }}</td>
       </tr>
     </tbody>
   </table>
-
+</div>
 <router-outlet></router-outlet>

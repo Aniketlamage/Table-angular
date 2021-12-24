@@ -1,12 +1,9 @@
 import { Component, OnInit, PipeTransform } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DecimalPipe } from '@angular/common';
 import { FormControl } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 interface data{
@@ -39,45 +36,23 @@ const EMPLOYEE : data[]=[
 { "id": 20,  "name": "Kim",  "department": "Finance",  "joining_date": 20/10/2010,"salary": 38000}];
 
 
-function search(text: string, pipe: PipeTransform): data[] {
-  return EMPLOYEE.filter(data => {
-    const term = text.toLowerCase();
-    return data.name.toLowerCase().includes(term)
-        || pipe.transform(data.department).includes(term)
-        || pipe.transform(data.salary).includes(term);
-  });
-}
+
 
 @Component({
-  selector: 'ngbd-app-employee',
+  selector: 'app-employee',
   templateUrl: './employee.component.html',
   styleUrls: ['./employee.component.css'],
-  providers: [DecimalPipe]
 
 })
 export class EmployeeComponent implements OnInit {
     
-    data = EMPLOYEE;
-  
- 
+    searchText:any;
+  data = EMPLOYEE;
   constructor() { }
 
   ngOnInit(): void {
-  
+
   }
 
 
-}
-
-export class NgbdAppEmployee{
-
-  employee$: Observable<data[]>;
-  filter = new FormControl('');
-
-  constructor(pipe: DecimalPipe) {
-    this.employee$ = this.filter.valueChanges.pipe(
-      startWith(''),
-      map(text => search(text, pipe))
-    );
-  }
 }

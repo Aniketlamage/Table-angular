@@ -1,9 +1,12 @@
-<h1>Component,Routing and data</h1>
+<h1>Components,Routing and Bootstrap</h1>
 
-<div>
-<button  routerLink="">Home</button>
-<button routerLink="./contact-component">contact</button>
-<button routerLink="./employee-component">employee-Details</button>
-</div>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <form class="container-fluid justify-content-start">
+      <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="">HOME</button>
+      <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="./employee-component">employee-Details</button>
+      <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="./contact-component">contact</button>
+
+    </form>
+  </nav>
 
 <router-outlet></router-outlet>

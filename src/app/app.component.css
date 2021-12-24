@@ -4,6 +4,14 @@ h1{
     color: lightseagreen;
 }
 
+h1{
+    transition-duration: 0.4s;
+  }
+  
+h1:hover {
+    background-color: lightseagreen; 
+    color: white;
+  }
 div{
 
     text-align: center;
@@ -13,9 +21,6 @@ div{
 
 button{
     text-align: center;
-    display: inline-block;
-    align-items: center;
-    padding: 15px 32px;
     background-color: white;
     color: cadetblue;
     border: 2px solid lightgray;
