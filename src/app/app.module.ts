@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { DetailsComponent } from './details/details.component';
 
 
 @NgModule({
@@ -17,8 +18,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     AppComponent,
     EmployeeComponent,
     PageNotFoundComponent,
-    ContactComponent,
-  ],
+    DetailsComponent,
+      ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,7 +28,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

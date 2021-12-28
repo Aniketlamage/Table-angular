@@ -6,7 +6,7 @@
   </div>
 
 
-<table class="table table-striped">
+<table class="table table-hover">
     <thead>
       <tr>
         <th >id</th>
@@ -17,14 +17,22 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor = "let data of data | filter:searchText" >
-        <td>{{ data.id }}</td>
-        <td>{{ data.name }}</td>
-        <td>{{ data.department }}</td>
-        <td>{{ data.joining_date | date:"MM/dd/yy" }}</td>
-        <td>{{ data.salary }}</td>
+      <tr  *ngFor = "let data of data | filter:searchText" >
+        <td (click)="onSelect(data)">{{data.id}}</td>
+        <td >{{ data.name }}</td>
+        <td (click)="onSelect(data)">{{ data.department }}</td>
+        <td>{{ data.joining_date }}</td>
+        <td >{{ data.salary }}</td>
       </tr>
     </tbody>
   </table>
+  
+  <ngb-pagination 
+  [pageSize]="10"
+  [collectionSize]="10" 
+  [(page)]="page" 
+  [boundaryLinks]="true" >
+</ngb-pagination>
 </div>
+
 <router-outlet></router-outlet>
